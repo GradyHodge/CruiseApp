@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-us" xmlns:th="http://thymeleaf.org">
+<head>
+<title>Cruise Checklist</title>
+<metacharset="UTF-8">
+</head>
+<body>
+	<h1>Cruise Checklist</h1>
+	<h3>CreatePageA</h3>
+
+	<header>
+		<section>On-Boat Activities</section>
+		<section>Content- Off Boat Excursion Task explanation</section>
+	</header>
+
+<!-- ON-BOAT NEW TASK FORM -->
+
+	<section id="NewTaskForm" class="col-md-6">
+
+		<h2>NEW OFF-BOAT ACTIVITY</h2>
+
+		<a th:href="@{/}"><button>Home</button></a>
+
+		<form th:action="@{/new}" th:method="post">
+			<input th:value="${title}" name="title" placeholder="Excursion" /> <input
+			<input th:value="${description}" name="description" placeholder="location details" />
+			<input th:value="${creator}" name="creator" placeholder="activity owner" />
+			<input th:value="${date}" name="date" placeholder="activity date" />
+			<input th:value="${time}" name="time" placeholder="activity time" />
+			<!-- <th: loop for enum -->
+			<button>Submit</button>
+		</form>
+
+<!-- DELETE BUTTON -->
+
+		<form th:action="@{'/{id}' (id=${task.id})}" th:method="delete">
+			<button>Delete</button>
+		</form>
+
+<!-- EDIT BUTTON -->
+
+		<form th:action="@{'/edit/{id}' (id=${task.id})}" th:method="get">
+			<button>Edit</button>
+		</form>
+		</div>
+	</section>
+
+
+	<footer> TTS Final Project | Edit, Johnson, Grady</footer>
+</body>
+
+</html>

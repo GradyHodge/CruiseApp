@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-us" xmlns:th="http://thymeleaf.org">
+<head>
+<title>Cruise Checklist</title>
+<metacharset="UTF-8">
+</head>
+<body>
+	<h1>Cruise Checklist</h1>
+	<h3>Edit Page</h3>
+
+	<header>
+		<section>Edit Your Activities</section>
+	</header>
+
+<!-- ON-BOAT NEW TASK FORM -->
+
+	<section id="EditTaskForm" class="col-md-6">
+
+		<h2>EDIT ACTIVITY</h2>
+
+		<a th:href="@{/}"><button>Home</button></a>
+									
+		<form th:action="@{'/index/{id}' (id=${task.id})}" th:object="${tasks}" th:method="put">
+			<input th:value="${title}"       name="title"       placeholder="new title" />
+			<input th:value="${description}" name="description" placeholder="activity details" />
+			<input th:value="${creator}"     name="creator"     placeholder="activity owner" />
+			<input th:value="${date}"        name="date"        placeholder="activity date" />
+			<input th:value="${time}"        name="time"        placeholder="activity time" />
+			<!-- <th: loop for enum -->
+			<button type="submit">Submit</button>
+		</form>
+
+
+
+
+	<footer> TTS Final Project | Edit, Johnson, Grady</footer>
+</body>
+
+</html>

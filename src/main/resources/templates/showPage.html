@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-us" xmlns:th="http://thymeleaf.org">
+<head>
+<title>Cruise Checklist</title>
+<metacharset="UTF-8"> <!-- BOOTSTRAP CDN -->
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+	<h1>Cruise Checklist</h1>
+	<h3>Home Page</h3>
+
+	<header>
+		<h3>Content-Intro<h3>
+		<p>Keep track of all your excursions and on-board activities so you and your group don't miss a single moment of memories</p>
+		<p>Simply click on one of the activity buttons below to get started. Be sure to schedule some nap time</p>
+
+	</header>
+
+<!-- for each loop to display the On-Boat Tasks -->	
+
+	<a th:href="@{/new}"> <button>OnBoad Activities</button></a>
+	
+		<div th:each="task : ${onTasks}">
+			<h3 th:text="${task.title}"></h3>
+			<p th:text="${task.description}"></p>
+			<p th:text="${task.creator}"></p>
+			<p th:text="${task.status}"></p>
+			<p th:text="${task.date}"></p>
+			<p th:text="${task.time}"></p>
+	
+<!-- DELETE BUTTON -->
+
+		<form th:action="@{'/{id}' (id=${task.id})}" th:method="delete">
+			<button>Delete</button>
+		</form>
+
+<!-- EDIT BUTTON -->
+
+		<form th:action="@{'/edit/{id}' (id=${task.id})}" th:method="get">
+			<button>Edit</button>
+		</form>
+	</div>
+	</section>
+		
+			
+<!-- for each loop to display the On-Boat Tasks -->	
+
+	<a th:href="@{/new}"><button>Off-Boat Activities</button></a>
+	
+		<div th:each="task : ${offTasks}">
+			<h3 th:text="${task.title}"></h3>
+			<p th:text="${task.description}"></p>
+			<p th:text="${task.creator}"></p>
+			<p th:text="${task.status}"></p>
+			<p th:text="${task.date}"></p>
+			<p th:text="${task.time}"></p> 
+	
+<!-- DELETE BUTTON -->
+
+		<form th:action="@{'/{id}' (id=${task.id})}" th:method="delete">
+			<button>Delete</button>
+		</form>
+
+<!-- EDIT BUTTON -->
+
+		<form th:action="@{'/edit/{id}' (id=${task.id})}" th:method="get">
+			<button>Edit</button>
+		</form>
+	</div>					
+	<footer></footer>
+
+	<!-- BOOTSTRAP CDN -->
+	<script
+		src=“https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js”
+		integrity=“sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM”
+		crossorigin=“anonymous”></script>
+</body>
+
+</html>
+
+
+

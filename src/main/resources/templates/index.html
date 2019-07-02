@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-us" xmlns:th="http://thymeleaf.org">
+<head>
+<title>Cruise Checklist</title>
+<metacharset="UTF-8"> <!-- BOOTSTRAP CDN -->
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+	<h1>Cruise Checklist</h1>
+	<h3>Home Page</h3>
+
+	<header>
+		<h3>Content-Intro<h3>
+		<p>Keep track of all your excursions and on-board activities so you and your group don't miss a single moment of memories</p>
+		<p>Simply click on one of the activity buttons below to get started. Be sure to schedule some nap time</p>
+
+	</header>
+
+	<section id="left panel" class="col-md-6">
+
+		<form th:action="@{/onboard}" th:method="get">
+			<button>On-Board</button>
+		</form>
+	
+
+	</section>
+
+	<section id="right panel" class="col-md-6">
+
+		<form th:action="@{/offboard}" th:method="get">
+			<button>Excursions</button>
+		</form>
+	</section>
+
+
+
+	<footer></footer>
+
+	<!-- BOOTSTRAP CDN -->
+	<script
+		src=“https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js”
+		integrity=“sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM”
+		crossorigin=“anonymous”></script>
+</body>
+
+</html>
