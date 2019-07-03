@@ -21,17 +21,20 @@ public class TaskController {
 
 ////// Go to Pages - Get Methods
 
+	// GoTo Index page
 	@GetMapping(value = "/")
 	public String index(Task task, Model model) {
 		model.addAttribute("tasks", taskRepo.findAll());
 		return "index";
 	}
 
+	// GoTo Create On-Boat Task page
 	@GetMapping(value = "/onboard")
 	public String createOnBoardTask(Task task) {
 		return "createTaskPageA";
 	}
 
+	// GoTo Create Off-Boat Task page
 	@GetMapping(value = "/offboard")
 	public String createOffBoardTask(Task task) {
 		return "createTaskPageB";

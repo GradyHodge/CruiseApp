@@ -30,9 +30,8 @@
 			
 <!-- <th: loop for enum -->
 			<select>
-			<option th:each="importance : ${T(com.tts.FinalProjectCruiseApp.Model.Priority).values()}"th:value="${importance}" th:text="${importance}"></option>
-		</select>
-			
+				<option th:each="importance : ${T(com.tts.FinalProjectCruiseApp.Model.Priority).values()}"th:value="${importance}" th:text="${importance}"></option>
+			</select>
 			
 			<button type="submit">Submit</button>
 			</form>

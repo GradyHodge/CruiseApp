@@ -10,10 +10,11 @@
 	crossorigin="anonymous">
 </head>
 <body>
+	<header class="container jumbotron bg-secondary">
 	<h1>Cruise Checklist</h1>
 	<h3>Home Page</h3>
 
-	<header>
+	
 		<h3>Content-Intro<h3>
 		<p>Keep track of all your excursions and on-board activities so you and your group don't miss a single moment of memories</p>
 		<p>Simply click on one of the activity buttons below to get started. Be sure to schedule some nap time</p>
@@ -22,8 +23,8 @@
 
 <!-- for each loop to display the On-Boat Tasks -->	
 
-	<a th:href="@{/new}"> <button>OnBoad Activities</button></a>
-	
+	<a th:href="@{/onboard}"> <button>OnBoard Activities</button></a>
+	<a th:href="@{/offboard}"><button>OnShore Activities</button></a>
 		<div th:each="task : ${onTasks}">
 			<h3 th:text="${task.title}"></h3>
 			<p th:text="${task.description}"></p>
@@ -47,9 +48,7 @@
 	</section>
 		
 			
-<!-- for each loop to display the On-Boat Tasks -->	
-
-	<a th:href="@{/new}"><button>Off-Boat Activities</button></a>
+<!-- Enhanced forEach loop to display the On-Boat Tasks -->	
 	
 		<div th:each="task : ${offTasks}">
 			<h3 th:text="${task.title}"></h3>

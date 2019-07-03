@@ -2,18 +2,18 @@
 <html lang="en-us" xmlns:th="http://thymeleaf.org">
 <head>
 <title>Cruise Checklist</title>
-<metacharset="UTF-8">
+<meta charset="UTF-8">
 </head>
 <body>
 	<h1>Cruise Checklist</h1>
-	<h3>CreatePageA</h3>
+	<h3>CreatePageB</h3>
 
 	<header>
-		<section>On-Boat Activities</section>
+		<section>OFF-Boat Activities</section>
 		<section>Content- Off Boat Excursion Task explanation</section>
 	</header>
 
-<!-- ON-BOAT NEW TASK FORM -->
+<!-- OFF-BOAT NEW TASK FORM -->
 
 	<section id="NewTaskForm" class="col-md-6">
 
@@ -22,12 +22,15 @@
 		<a th:href="@{/}"><button>Home</button></a>
 
 		<form th:action="@{/new}" th:method="post">
-			<input th:value="${title}" name="title" placeholder="Excursion" /> <input
+			<input th:value="${title}" name="title" placeholder="Excursion" />
 			<input th:value="${description}" name="description" placeholder="location details" />
 			<input th:value="${creator}" name="creator" placeholder="activity owner" />
 			<input th:value="${date}" name="date" placeholder="activity date" />
-			<input th:value="${time}" name="time" placeholder="activity time" />
-			<!-- <th: loop for enum -->
+			<input th:value="${time}" name="time" placeholder="activity time" />			
+<!-- <th: loop for enum -->
+			<select>
+				<option th:each="importance : ${T(com.tts.FinalProjectCruiseApp.Model.Priority).values()}"th:value="${importance}" th:text="${importance}"></option>
+			</select>
 			<button>Submit</button>
 		</form>
 
