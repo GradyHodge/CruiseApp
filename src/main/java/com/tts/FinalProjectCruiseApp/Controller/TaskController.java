@@ -22,7 +22,7 @@ public class TaskController {
 ////// Go to Pages - Get Methods
 
 	// GoTo Index page
-	@GetMapping(value = "/")
+	@GetMapping(value = { "/", "/new", " " })
 	public String index(Task task, Model model) {
 		model.addAttribute("tasks", taskRepo.findAll());
 		return "index";
@@ -76,7 +76,7 @@ public class TaskController {
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public String deletePostWithId(@PathVariable Long id, Task task, Model model) {
-		model.addAttribute("tasks", taskRepo.findAll());
+		model.addAttribute("ontasks", taskRepo.findAll());
 		taskRepo.deleteById(id);
 		return "showPage";
 	}

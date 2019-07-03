@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-us" xmlns:th="http://thymeleaf.org">
+<head>
+<title>Cruise Checklist</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http:maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https:fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="css/layout.css">
+    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+	<header>
+	<h1>Cruise Checklist</h1>
+	<h3>CreatePageA</h3>
+		<section>On-Boat Activities</section>
+		<section>Content- On-Board Task explanation</section>
+	</header>
+
+<!-- ON-BOAT NEW TASK FORM -->
+
+	<section id="NewTaskForm" class="col-md-6">
+
+		<h2>NEW ON-BOAT ACTIVITY</h2>
+
+		<a th:href="@{/}"><button>Home</button></a>
+<div class="container form-group">
+		<form th:action="@{/onboard}" th:method="post">
+			<div class="form-control ">
+				<input th:value="${title}" name="title" placeholder="new title" />
+			</div>
+			<div class="form-control ">
+				<input th:value="${description}" name="description" placeholder="activity details" />
+			</div>
+			<div class="form-control ">
+				<input th:value="${creator}" name="creator" placeholder="activity owner" />
+			</div>
+			<div class="form-control ">
+				<input type="datetime-local" th:value="${date}" name="date" placeholder="activity date" />
+			</div>
+		
+<!-- <th: loop for enum -->
+
+			<select>
+				<option th:each="importance : ${T(com.tts.FinalProjectCruiseApp.Model.Priority).values()}"th:value="${importance}" th:text="${importance}"></option>
+			</select>
+			
+			<button type="submit">Submit</button>
+		</form>
+	</div>	
+
+	<footer> TTS Final Project | Edit, Johnson, Grady</footer>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-us" xmlns:th="http://thymeleaf.org">
+<head>
+<title>Cruise Checklist</title>
+<title>Cruise App</title>
+<metacharset="UTF-8"> <!-- BOOTSTRAP CDN -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http:maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https:fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="css/layout.css">
+    
+</head>
+<body>
+	<header class="text-center ">
+		<h1>Cruise Checklist</h1>
+		<h3>Home Page</h3>
+		
+		
+		<h3>Content-Intro<h3>
+			<p>Help your group keep track of your cruise trip activities and even coordinate nap time <br>
+			Keep track of all your excursions and on-board activities so you and your group don't miss a single moment of memories</p>
+			<br><p>Simply click on one of the activity buttons below to get started. Be sure to schedule some nap time</p>
+
+	</header>
+	<div class=" container jumbotron text-center">
+		<section id="left panel" class="btn btn-lg btn-info col-md-6">
+	
+			<form th:action="@{/onboard}" th:method="get">
+				<button>On-Board Activities</button>
+			</form>
+		
+	
+		</section>
+	
+		<section id="right panel" class="btn btn-lg btn-info col-md-6 ">
+	
+			<form th:action="@{/offboard}" th:method="get">
+				<button>On-Shore Activities</button>
+			</form>
+		</section>
+	</div>
+
+
+	<footer></footer>
+
+	<!-- BOOTSTRAP CDN -->
+	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+	
+</body>
+
+</html>

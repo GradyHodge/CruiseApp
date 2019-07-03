@@ -1,25 +1,52 @@
+
 <!DOCTYPE html>
-<html lang="en-us" xmlns:th="http://thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<title>Cruise Checklist</title>
-<meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cruise App</title>
+    <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http:maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https:fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="css/layout.css">
+    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
 </head>
+
 <body>
-	<h1>Cruise Checklist</h1>
-	<h3>CreatePageB</h3>
-
-	<header>
-		<section>OFF-Boat Activities</section>
-		<section>Content- Off Boat Excursion Task explanation</section>
-	</header>
-
-<!-- OFF-BOAT NEW TASK FORM -->
-
-	<section id="NewTaskForm" class="col-md-6">
-
-		<h2>NEW OFF-BOAT ACTIVITY</h2>
-
-		<a th:href="@{/}"><button>Home</button></a>
+    <div>
+        <div class="header-blue">
+            <nav class="navbar navbar-default navigation-clean-search">
+                <div class="container">
+                    <div class="navbar-header"><img src="images/jeg_white.png"  height="60px">
+                        <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navcol-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="active" role="presentation"><a th:href="@{/}">Home</a></li>
+                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Explore <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li th:action="@{/onboard}" th:method="get" type="button" role="presentation"><a href="#">Create a Task</a></li>
+                                    <li th:action="@{/showPage}" th:method="get" type="button" role="presentation"><a href="#">List Tasks</a></li>
+                                    <li th:action="@{/update}" th:method="get" type="button" role="presentation"><a href="#">Update a Task</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                       </div>
+                </div>
+                
+                 <div class="container hero">
+                <div class="row">
+                    <div class="col-lg-5 col-lg-offset-1 col-md-6 col-md-offset-0">
+                        
+                       <!--  <img src="images/jeg_white.png"  height="200px"> -->
+                        <h1>Cruise Checklist</h1>
+                        <p>NEW ON-BOAT TASK</p>
+                        
+                        <section>
+                        
+					<div class="container form-group">
+						<a th:href="@{/}"><button>Home</button></a>
 
 		<form th:action="@{/new}" th:method="post">
 			<input th:value="${title}" name="title" placeholder="Excursion" />
@@ -45,12 +72,30 @@
 
 		<form th:action="@{'/edit/{id}' (id=${task.id})}" th:method="get">
 			<button>Edit</button>
-		</form>
-		</div>
-	</section>
+	
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </nav>
+	<div class="footer_copy">
+                <div class="container">
+                    <div class="column one">
+
+                        <div class="copyright">
+                            &copy;2019 TTS Final Project | Johnson, Edit, Grady<a target="_blank" rel="nofollow" href=""></a>
+                        </div>
+                        <!--Social info area-->
+                        <ul class="social"></ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
 
 
-	<footer> TTS Final Project | Edit, Johnson, Grady</footer>
+	  <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
 </body>
 
 </html>
