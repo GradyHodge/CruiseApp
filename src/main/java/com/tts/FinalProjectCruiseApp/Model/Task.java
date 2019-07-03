@@ -31,10 +31,8 @@ public class Task {
 	@Lob
 	private String description;
 	private String creator;
-	private boolean status;// get rid of
 	@DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
 	private Date date;
-	private Date time;// get rid of
 	@Enumerated(value = EnumType.STRING)
 	private Priority importance;
 

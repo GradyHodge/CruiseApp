@@ -22,30 +22,28 @@
 		<a th:href="@{/}"><button>Home</button></a>
 <div class="container form-group">
 		<form th:action="@{/onboard}" th:method="post">
-		<div class="form-control ">
-			<input th:value="${title}" name="title" placeholder="new title" />
-		</div>
-		<div class="form-control ">
-			<input th:value="${description}" name="description" placeholder="activity details" />
-		</div>
-		<div class="form-control ">
-			<input th:value="${creator}" name="creator" placeholder="activity owner" />
-		</div>
-		<div class="form-control ">
-			<input type="datetime-local" th:value="${date}" name="date" placeholder="activity date" />
-		</div>
-<!--GET RID OF TIME
- -->		<div class="form-control ">
-			<input th:value="${time}" name="time" placeholder="activity time" />
-		</div>	
+			<div class="form-control ">
+				<input th:value="${title}" name="title" placeholder="new title" />
+			</div>
+			<div class="form-control ">
+				<input th:value="${description}" name="description" placeholder="activity details" />
+			</div>
+			<div class="form-control ">
+				<input th:value="${creator}" name="creator" placeholder="activity owner" />
+			</div>
+			<div class="form-control ">
+				<input type="datetime-local" th:value="${date}" name="date" placeholder="activity date" />
+			</div>
+		
 <!-- <th: loop for enum -->
+
 			<select>
 				<option th:each="importance : ${T(com.tts.FinalProjectCruiseApp.Model.Priority).values()}"th:value="${importance}" th:text="${importance}"></option>
 			</select>
-	</div>		
-			<button type="submit">Submit</button>
-			</form>
 			
+			<button type="submit">Submit</button>
+		</form>
+	</div>	
 
 	<footer> TTS Final Project | Edit, Johnson, Grady</footer>
 </body>

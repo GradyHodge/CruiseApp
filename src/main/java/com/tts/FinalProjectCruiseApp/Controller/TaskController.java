@@ -48,8 +48,8 @@ public class TaskController {
 		model.addAttribute("title", task.getTitle());
 		model.addAttribute("description", task.getDescription());
 		model.addAttribute("createdBy", task.getCreator());
-		model.addAttribute("status", task.isStatus());
 		model.addAttribute("date", task.getDate());
+		model.addAttribute("importance", task.getImportance());
 
 		taskRepo.save(task);
 		model.addAttribute("onTasks", taskRepo.findAll());
@@ -64,8 +64,8 @@ public class TaskController {
 		model.addAttribute("title", task.getTitle());
 		model.addAttribute("description", task.getDescription());
 		model.addAttribute("createdBy", task.getCreator());
-		model.addAttribute("status", task.isStatus());
 		model.addAttribute("date", task.getDate());
+		model.addAttribute("importance", task.getImportance());
 
 		taskRepo.save(task);
 		model.addAttribute("offTasks", taskRepo.findAll());
@@ -98,13 +98,11 @@ public class TaskController {
 		task1.setTitle(task1.getTitle());
 		task1.setDescription(task1.getDescription());
 		task1.setCreator(task1.getCreator());
-		task1.setStatus(task1.isStatus());
 		task1.setDate(task1.getDate());
-		task1.setTime(task1.getTime());
-
+		task1.setImportance(task1.getImportance());
 		taskRepo.save(task);
 
-		model.addAttribute("tasks", taskRepo.findAll());
+		model.addAttribute("onTasks", taskRepo.findAll());
 		return "showPage";
 	}
 

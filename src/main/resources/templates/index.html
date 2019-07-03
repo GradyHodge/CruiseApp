@@ -10,32 +10,34 @@
 	crossorigin="anonymous">
 </head>
 <body>
-	<h1>Cruise Checklist</h1>
-	<h3>Home Page</h3>
-
-	<header>
+	<header class="text-center ">
+		<h1>Cruise Checklist</h1>
+		<h3>Home Page</h3>
+		
+		
 		<h3>Content-Intro<h3>
-		<p>Keep track of all your excursions and on-board activities so you and your group don't miss a single moment of memories</p>
-		<p>Simply click on one of the activity buttons below to get started. Be sure to schedule some nap time</p>
+			<p>Help your group keep track of your cruise trip activities and even coordinate nap time <br>
+			Keep track of all your excursions and on-board activities so you and your group don't miss a single moment of memories</p>
+			<br><p>Simply click on one of the activity buttons below to get started. Be sure to schedule some nap time</p>
 
 	</header>
-
-	<section id="left panel" class="col-md-6">
-
-		<form th:action="@{/onboard}" th:method="get">
-			<button>On-Board</button>
-		</form>
+	<div class=" container jumbotron text-center">
+		<section id="left panel" class="btn btn-lg btn-info col-md-6">
 	
-
-	</section>
-
-	<section id="right panel" class="col-md-6">
-
-		<form th:action="@{/offboard}" th:method="get">
-			<button>Excursions</button>
-		</form>
-	</section>
-
+			<form th:action="@{/onboard}" th:method="get">
+				<button>On-Board Activities</button>
+			</form>
+		
+	
+		</section>
+	
+		<section id="right panel" class="btn btn-lg btn-info col-md-6 ">
+	
+			<form th:action="@{/offboard}" th:method="get">
+				<button>On-Shore Activities</button>
+			</form>
+		</section>
+	</div>
 
 
 	<footer></footer>
