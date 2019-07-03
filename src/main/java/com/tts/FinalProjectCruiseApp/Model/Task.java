@@ -1,6 +1,8 @@
 package com.tts.FinalProjectCruiseApp.Model;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,5 +30,7 @@ public class Task {
 	private boolean status;
 	private int date;
 	private int time;
+	@Enumerated(value = EnumType.STRING)
+	private Priority importance;
 
 }

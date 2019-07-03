@@ -26,7 +26,12 @@
 			<input th:value="${creator}"     name="creator"     placeholder="activity owner" />
 			<input th:value="${date}"        name="date"        placeholder="activity date" />
 			<input th:value="${time}"        name="time"        placeholder="activity time" />
-			<!-- <th: loop for enum -->
+		
+<!-- <th: loop for enum -->
+			<select>
+			<option th:each="importance : ${T(com.tts.FinalProjectCruiseApp.Model.Priority).values()}"th:value="${importance}" th:text="${importance}"></option>
+		</select>
+			
 			<button type="submit">Submit</button>
 		</form>
 
