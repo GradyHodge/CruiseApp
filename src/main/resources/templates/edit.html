@@ -19,13 +19,13 @@
 		<h2>EDIT ACTIVITY</h2>
 
 		<a th:href="@{/}"><button>Home</button></a>
-									
-		<form th:action="@{'/index/{id}' (id=${task.id})}" th:object="${tasks}" th:method="put">
-			<input th:value="${title}"       name="title"       placeholder="new title" />
-			<input th:value="${description}" name="description" placeholder="activity details" />
-			<input th:value="${creator}"     name="creator"     placeholder="activity owner" />
-			<input th:value="${date}"        name="date"        placeholder="activity date" />
-			<input th:value="${time}"        name="time"        placeholder="activity time" />
+									                 
+		<form th:action="@{'/edit/{id}' (id=${task.id})}"  th:object="${tasks}" th:method="put">
+			<input th:value="${tasks.title}"       name="title"       placeholder="new title" />
+			<input th:value="${tasks.description}" name="description" placeholder="activity details" />
+			<input th:value="${tasks.creator}"     name="creator"     placeholder="activity owner" />
+			<input th:value="${tasks.date}"        name="date"        placeholder="activity date" />
+			<input th:value="${tasks.time}"        name="time"        placeholder="activity time" />
 		
 <!-- <th: loop for enum -->
 			<select>
