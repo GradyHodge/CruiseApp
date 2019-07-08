@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -31,7 +33,8 @@ public class Task {
 	@Lob
 	private String description;
 	private String creator;
-	@DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
+	@DateTimeFormat(pattern = "yyyy/MM/dd'T'HH:mm")
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date date;
 	@Enumerated(value = EnumType.STRING)
 	private Priority importance;
